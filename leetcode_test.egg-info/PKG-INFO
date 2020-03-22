@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: leetcode-test
+Version: 0.0.8
+Summary: A small example package
+Home-page: https://github.com/pypa/sampleproject
+Author: Twotiger
+Author-email: dgl0518@gmail.com
+License: UNKNOWN
+Description: # leetcode test
+        
+        仅用适用于python
+        
+        方便本地测试,ListNode和TreeNode类型
+        
+        
+        ```
+        # filename leetcode.py
+        from leetcode_test import TreeNode
+        
+        class Solution:
+            def isSymmetric(self, root: TreeNode) -> bool:
+                def symmetric(left, right):
+                    if not left and not right:
+                        return True
+                    if not left or not right:
+                        return False
+                    return (
+                        left.val == right.val
+                        and symmetric(left.left, right.right)
+                        and symmetric(left.right, right.left)
+                    )
+                if not root:
+                    return True
+                return symmetric(root.left, root.right)
+        
+        def test():
+            tree = TreeNode.create([1,2,3,4,5])
+            assert Solution().isSymmetric(tree)
+        
+        ```
+        
+        
+        使用pytest测试
+        
+        ```
+        pytest leetcode.py
+        ```
+        
+        # 0.0.5
+        
+        为ListNode, TreeNode添加`__str__`方法
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
