@@ -1,5 +1,6 @@
 from typing import List
 import logging
+import collections
 
 logging.basicConfig(
     level=logging.INFO,
@@ -39,7 +40,14 @@ class TreeNode:
                 data.extend(new_data)
             else:
                 break
-        return data
+        # 去掉尾部的None
+        index = len(data)
+        for i in range(len(data) - 1, -1, -1):
+            if data[i] != None:
+                index = i
+                break
+
+        return data[:index+1]
 
     def __str__(self):
         return "<TreeNode: %s>" % self.val
@@ -82,7 +90,7 @@ class TreeNodeFactory:
                     else:
                         new_queue.append(None)
                     p += 1
-       
+
             queue = new_queue
         return root
 
@@ -161,12 +169,18 @@ def test_treenode2():
     tree = TreeNode.create([5, 4, 7, 3, None, 2, None, -1, None, 9])
     assert tree.right.left.left.val == 9
 
+
 def test_treenode3():
     # 创建不合法的tree node
     tree = TreeNode.create([3, None, 20, None, None, 15, 7])
     assert tree.get_value() == [3, None, 20]
 
 
+def test_treenode4():
+    tree = TreeNode.create([1, 2, 3, 4])
+    assert tree.get_value() == [1, 2, 3, 4]
+
+
 if __name__ == "__main__":
-    t = TreeNode.create([3, None, 20, None, None, 15, 7])
+    t = TreeNode.create([1, 2, 3, 4,5])
     print(t.get_value())

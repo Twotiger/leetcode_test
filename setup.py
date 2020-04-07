@@ -2,7 +2,7 @@ import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
-VERSION = "0.0.8"
+VERSION = "0.0.9"
 setuptools.setup(
     name="leetcode_test", # Replace with your own username
     version=VERSION,

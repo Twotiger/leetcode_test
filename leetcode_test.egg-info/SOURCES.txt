@@ -1,4 +1,5 @@
 README.md
+setup.cfg
 setup.py
 leetcode_test/__init__.py
 leetcode_test/leetcode_test.py

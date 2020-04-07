@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: leetcode-test
-Version: 0.0.8
+Version: 0.0.9
 Summary: A small example package
 Home-page: https://github.com/pypa/sampleproject
 Author: Twotiger
@@ -44,6 +44,12 @@ Description: # leetcode test
         
         ```
         pytest leetcode.py
+        ```
+        
+        如何安装
+        
+        ```
+        pip install git+https://github.com/Twotiger/leetcode_test.git
         ```
         
         # 0.0.5
