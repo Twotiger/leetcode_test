@@ -51,7 +51,9 @@ class TreeNode:
 
     def __str__(self):
         return "<TreeNode: %s>" % self.val
-
+    
+    def __repr__(self):
+        return "<TreeNode: %s>" % self.val
 
 class TreeNodeFactory:
     @classmethod
@@ -151,6 +153,8 @@ class ListNode:
     def __str__(self):
         return "<ListNode: %s>" % self.val
 
+    def __repr__(self):
+        return "<ListNode: %s>" % self.val
 
 def test_listnode():
     node = ListNode.create([1, 2, 3])
